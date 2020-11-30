@@ -1,5 +1,5 @@
 #dropZone,
-#animals {
+#symbols {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -10,7 +10,9 @@
 #dropBox1,
 #dropBox2,
 #dropBox3,
-#dropBox4 {
+#dropBox4,
+#dropBox5,
+#dropBox6 {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
