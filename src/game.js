@@ -15,19 +15,19 @@ function drop(event) {
 const manners = ['plosive', 'fricative']
 const places = ['bilabial', 'alveolar', 'palatal', 'velar']
 const rules = {
-  k-symbol: {
+  'k symbol': {
     place: ['velar'],
     manner: ['plosive']
 },
-  p-symbol: {
+  'p symbol': {
      place: ['bilabial'],
      manner: ['plosive']
 },
-  c-symbol: {
+  'c symbol': {
      place: ['palatal'],
      manner: ['plosive']
 },
-  t-symbol: {
+  't symbol': {
      place: ['alveolar'],
      manner: ['plosive']
 }
