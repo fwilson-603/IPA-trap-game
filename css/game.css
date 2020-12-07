@@ -1,9 +1,15 @@
-#dropZone,
-#symbols {
+#dropZone {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   min-height: 100px;
+  margin-bottom: 20px;
+}
+
+#symbols {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
