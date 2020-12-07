@@ -4,6 +4,7 @@
   justify-content: space-between;
   min-height: 100px;
   margin-bottom: 20px;
+  border: 1px;
 }
 
 #symbols {
