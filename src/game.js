@@ -1,16 +1,24 @@
-function allowDrop(event) {
-  event.preventDefault();
+let dragged;
+
+function onDragStart(event) {
+  let target = event.target;
+  if (target && target.nodeName === "IMG") {
+    dragged = target;
+    event.dataTransfer.setData('text', target.id);
+    event.dataTransfer.dropEffect = 'move';
+    event.target.style.opacity = .3;
 }
 
-function drag(event) {
-  event.dataTransfer.setData("text", event.target.id);
+function onDragEnd(event) {
+  if (event.target && event.target.nodeName === "IMG") {
+    event.target.style.opacity = '';
+    dragged = null;
 }
+  
+const symbols = document.querySelector('.symbols');
+symbols.addEventListener('dragstart', onDragStart);
+symbols.addEventListener('dragend', onDragEnd);
 
-function drop(event) {
-  event.preventDefault();
-  var data = event.dataTransfer.getData("text");
-  event.target.appendChild(document.getElementById(data));
-}
 
 const manners = ['plosive', 'fricative']
 const places = ['bilabial', 'alveolar', 'palatal', 'velar']
