@@ -11,3 +11,7 @@ function drop(event) {
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
 }
+
+function changeText() {
+  document.getElementById('demo').innerHTML='Wow! Some different text!';
+}
