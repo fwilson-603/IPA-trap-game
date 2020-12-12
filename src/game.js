@@ -1,5 +1,10 @@
 var dragged;
 
+var IPArules = {
+  'k symbol': { place: ['velar'] }
+};
+
+
 function allowDrop(event) {
   event.preventDefault();
 }
@@ -12,7 +17,22 @@ function drop(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
-  event.target.style.background='#7FFFD4';
+  var IPAsymbol = target.alt;
+  if (canCheck(IPAsymbol)) {
+    event.target.style.background = '#006400';
+  }
+  else {
+    event.target.style.background = '#8B0000';
+  }
+}
+
+function canCheck(symbol) {
+  var rules = IPArules[symbol];
+  var validPlaces = rules.place;
+  if (validPlaces == event.target.id) {
+    return true;
+  }
+  return false;
 }
 
 function dragLeave(event) {
