@@ -15,11 +15,11 @@
   margin-bottom: 20px;
 }
 
-#dropBox1,
-#dropBox2,
-#dropBox3,
-#dropBox4,
-#dropBox5,
+#plosive,
+#alveolar,
+#bilabial,
+#palatal,
+#fricative,
 #dropBox6 {
   display: flex;
   flex-flow: column nowrap;
