@@ -15,6 +15,10 @@ function drop(event) {
   event.target.style.background='#7FFFD4';
 }
 
+function dragLeave(event) {
+  event.target.style.background='';
+}
+
 function changeText() {
   document.getElementById('demo').innerHTML='Wow! Some different text!';
 }
