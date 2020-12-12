@@ -19,8 +19,8 @@
 #alveolar,
 #bilabial,
 #palatal,
-#fricative,
-#dropBox6 {
+#velar,
+#fricative {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
