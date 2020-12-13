@@ -52,7 +52,7 @@ function dragLeave(event) {
 }
 
 function testTruth() {
-  if (test) {
+  if (x) {
   document.getElementById('it').innerHTML="It's true!"
   }
   else {
