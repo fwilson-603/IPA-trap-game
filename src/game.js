@@ -1,4 +1,6 @@
 var dragged;
+var x = true;
+var y = false;
 
 var IPArules = {
   'k symbol': { place: ['velar'] }
@@ -26,10 +28,16 @@ function drop(event) {
   }
 }
 
+function drop0(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData("text");
+  event.target.appendChild(document.getElementById(data));
+}
+
 function canCheck(symbol) {
   var rules = IPArules[symbol];
   var validPlaces = rules.place;
-  if (validPlaces == event.target.id) {
+  if (x) {
     return true;
   }
   return false;
