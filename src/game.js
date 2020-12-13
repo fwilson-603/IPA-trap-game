@@ -20,7 +20,6 @@ function drop(event) {
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
   var IPAsymbol = target.alt;
-  window.alert("IPA symbol is: " + IPAsymbol);
   if (canCheck(IPAsymbol)) {
     event.target.style.background = '#006400';
   }
@@ -37,9 +36,7 @@ function drop0(event) {
 
 function canCheck(symbol) {
   var rules = IPArules[symbol];
-  window.alert("rules is: " + rules);
   var validPlaces = rules.place;
-  window.alert("validPlaces is: " validPlaces);
   if (x) {
     return true;
   }
