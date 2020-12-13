@@ -23,9 +23,8 @@ function drag(event) {
 function drop(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text");
-  var data2 = "velar";
   event.target.appendChild(document.getElementById(data));
-  if (validPlaces.includes(data2)) {
+  if (validPlaces.includes(data)) {
     event.target.style.background = '#006400';
   }
   else {
