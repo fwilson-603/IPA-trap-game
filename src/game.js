@@ -2,6 +2,8 @@ var dragged;
 var x = true;
 var y = false;
 
+validPlaces = ["velar", "bilabial"];
+
 var IPArules = {
   'ksymbol': { place: ['velar'] },
   'psymbol': { place: ['bilabial'] },
@@ -37,8 +39,8 @@ function drop0(event) {
 }
 
 function canCheck(symbol) {
-  var rules = IPArules[symbol];
-  var validPlaces = rules.place;
+ // var rules = IPArules[symbol];
+ // var validPlaces = rules.place;
   if (validPlaces.includes(symbol)) {
     return true;
   }
