@@ -41,7 +41,7 @@ function drop0(event) {
 function canCheck(symbol) {
  // var rules = IPArules[symbol];
  // var validPlaces = rules.place;
-  if (validPlaces.includes(symbol)) {
+  if (validPlaces.includes("velar")) {
     return true;
   }
   return false;
