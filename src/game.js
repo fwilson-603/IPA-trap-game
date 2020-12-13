@@ -41,7 +41,7 @@ function drop0(event) {
 function canCheck(symbol) {
  // var rules = IPArules[symbol];
  // var validPlaces = rules.place;
-  if (validPlaces.includes(velar)) {
+  if (validPlaces.includes(String(data))) {
     return true;
   }
   return false;
@@ -50,6 +50,16 @@ function canCheck(symbol) {
 function dragLeave(event) {
   event.target.style.background='';
 }
+
+function testTruth() {
+  if (test) {
+  document.getElementById('it').innerHTML="It's true!"
+  }
+  else {
+  document.getElementById('it').innerHTML="It's false!"
+  }
+}
+
 
 function changeText() {
   document.getElementById('demo').innerHTML='Wow! Some different text!';
