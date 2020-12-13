@@ -3,7 +3,10 @@ var x = true;
 var y = false;
 
 var IPArules = {
-  'ksymbol': { place: ['velar'] }
+  'ksymbol': { place: ['velar'] },
+  'psymbol': { place: ['bilabial'] },
+  'csymbol': { place: ['palatal'] },
+  'tsymbol': { place: ['alveolar'] }
 };
 
 
