@@ -22,7 +22,7 @@ function drop(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
-  if (data == "ksymbol") {
+  if (canCheck(data)) {
     event.target.style.background = '#006400';
   }
   else {
@@ -36,18 +36,10 @@ function drop0(event) {
   event.target.appendChild(document.getElementById(data));
 }
 
-function alwaysTrue() {
-  return true;
-}
-
-function alwaysFalse() {
-  return false;
-}
-
 function canCheck(symbol) {
   var rules = IPArules[symbol];
   var validPlaces = rules.place;
-  if (y) {
+  if (validPlaces.includes(symbol)) {
     return true;
   }
   return false;
