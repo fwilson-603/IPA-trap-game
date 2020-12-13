@@ -43,7 +43,7 @@ function drop0(event) {
 function canCheck(symbol) {
  // var rules = IPArules[symbol];
  // var validPlaces = rules.place;
-  if (validPlaces.includes(String(data))) {
+  if (validPlaces.includes(data1)) {
     return true;
   }
   return false;
