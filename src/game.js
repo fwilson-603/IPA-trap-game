@@ -3,7 +3,7 @@ var x = true;
 var y = false;
 
 var IPArules = {
-  'k symbol': { place: ['velar'] }
+  'ksymbol': { place: ['velar'] }
 };
 
 
@@ -19,8 +19,7 @@ function drop(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
-  var IPAsymbol = target.alt;
-  if (canCheck(IPAsymbol)) {
+  if (canCheck(data)) {
     event.target.style.background = '#006400';
   }
   else {
@@ -32,6 +31,14 @@ function drop0(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
+}
+
+function alwaysTrue() {
+  return true;
+}
+
+function alwaysFalse() {
+  return false;
 }
 
 function canCheck(symbol) {
