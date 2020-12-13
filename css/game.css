@@ -15,7 +15,7 @@
   margin-bottom: 20px;
 }
 
-.item {
+.IPAsymbol {
  display: inline-block;
   border: solid 1px #000;
   max-width: 15em;
@@ -24,6 +24,10 @@
   box-shadow: 1px 2px 2px rgba(0,0,0,.25);
   padding: .1em 0em;
   draggable: true;
+  font-family: Tinos;
+  font-size: 21px;
+  background-color: rgb(255,255,255);
+  color: #000;
 }
 
 #plosive,
