@@ -2,7 +2,7 @@ var dragged;
 var x = true;
 var y = false;
 
-validPlaces = ["velar", "bilabial"];
+var validPlaces = ["velar", "bilabial"];
 
 var IPArules = {
   'ksymbol': { place: ['velar'] },
