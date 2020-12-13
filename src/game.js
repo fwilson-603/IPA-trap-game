@@ -1,6 +1,4 @@
 var dragged;
-var x = true;
-var y = false;
 
 var validPlaces = ["velar", "bilabial"];
 
@@ -26,7 +24,7 @@ function drop(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
-  if (canCheck(data)) {
+  if (validPlaces.includes(data)) {
     event.target.style.background = '#006400';
   }
   else {
