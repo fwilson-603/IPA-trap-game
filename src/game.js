@@ -52,7 +52,7 @@ function dragLeave(event) {
 }
 
 function testTruth() {
-  if (x) {
+  if (validPlaces.includes('velar')) {
   document.getElementById('it').innerHTML="It's true!"
   }
   else {
