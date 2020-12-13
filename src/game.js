@@ -47,7 +47,7 @@ function alwaysFalse() {
 function canCheck(symbol) {
   var rules = IPArules[symbol];
   var validPlaces = rules.place;
-  if (x) {
+  if (y) {
     return true;
   }
   return false;
