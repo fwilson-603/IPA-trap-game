@@ -22,7 +22,7 @@ function drop(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
-  if (canCheck(data)) {
+  if (data == "ksymbol") {
     event.target.style.background = '#006400';
   }
   else {
