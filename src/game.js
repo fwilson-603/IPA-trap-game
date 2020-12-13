@@ -4,6 +4,8 @@ var y = false;
 
 var validPlaces = ["velar", "bilabial"];
 
+var data1 = "velar"
+
 var IPArules = {
   'ksymbol': { place: ['velar'] },
   'psymbol': { place: ['bilabial'] },
@@ -52,7 +54,7 @@ function dragLeave(event) {
 }
 
 function testTruth() {
-  if (validPlaces.includes('velar')) {
+  if (validPlaces.includes(data1)) {
   document.getElementById('it').innerHTML="It's true!"
   }
   else {
