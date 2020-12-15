@@ -11,6 +11,8 @@ var IPArules = {
   'tsymbol': { place: ['alveolar'] }
 };
 
+var IPArules2 = ['velar'];
+
 
 
 
@@ -28,8 +30,8 @@ function drop(event) {
   event.target.appendChild(document.getElementById(data));
   document.getElementById("test1").innerHTML = data;
   var rules = IPArules[data];
-  document.getElementById("test2").innerHTML = IPArules;
-  document.getElementById("test3").innerHTML = IPArules['ksymbol'];
+  document.getElementById("test2").innerHTML = IPArules2;
+  document.getElementById("test3").innerHTML = IPArules2[0];
   var test = validPlaces.indexOf(data1);
   if (test >= 0) {
     event.target.style.background = '#006400';
