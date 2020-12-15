@@ -24,6 +24,7 @@ function drop(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
+  document.getElementById("test1").innerHTML = data;
   var test = validPlaces.indexOf(data1);
   if (test >= 0) {
     event.target.style.background = '#006400';
