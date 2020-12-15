@@ -29,7 +29,7 @@ function drop(event) {
   document.getElementById("test1").innerHTML = data;
   var rules = IPArules[data];
   document.getElementById("test2").innerHTML = IPArules;
-  document.getElementById("test3").innerHTML = IPArules[ksymbol];
+  document.getElementById("test3").innerHTML = IPArules['ksymbol'];
   var test = validPlaces.indexOf(data1);
   if (test >= 0) {
     event.target.style.background = '#006400';
