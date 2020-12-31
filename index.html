@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<title>Test Game 15</title>
+			<title>Test Game 16</title>
 			<!-- link to main stylesheet -->
 			<link rel="stylesheet" type="text/css" href="css/game.css">
 			<!-- link to main js document -->
@@ -97,6 +97,7 @@ function generateSymbols() {
 		symbol.draggable = "true";
 		//symbol.addEventListener('dragstart', drag(event));
 		//symbol.setAttribute(ondragstart, "drag(event)");
+		symbol.setAttribute('dragstart', drag(event));
 		//symbol.ondragstart = "drag(event)";
 		document.getElementById("symbolTest").appendChild(symbol);
 	}
