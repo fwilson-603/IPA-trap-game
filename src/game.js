@@ -35,6 +35,10 @@ function foo() {
   alert('foo');
 }
 
+function pageLoad() {
+  randomizeSymbols();
+}
+
 function randomizeSymbols() {
   var i;
   var j;
