@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<title>Test Game 16</title>
+			<title>Test Game 17</title>
 			<!-- link to main stylesheet -->
 			<link rel="stylesheet" type="text/css" href="css/game.css">
 			<!-- link to main js document -->
@@ -84,6 +84,8 @@
 >
 <p>This is the symbol test div box.</p>
 </div>
+			
+<p id="tester1">This is another pieces of test text.</p>
 
 <script>
 function generateSymbols() {
@@ -95,9 +97,12 @@ function generateSymbols() {
 		symbol.className = 'IPAsymbol';
 		symbol.innerHTML = window[name];
 		symbol.draggable = "true";
+		symbol.addEventListener("click", function() {
+		document.getElementById("tester1").innerHTML = "Hello World";
+		});
 		//symbol.addEventListener('dragstart', drag(event));
 		//symbol.setAttribute(ondragstart, "drag(event)");
-		symbol.setAttribute('dragstart', drag(event));
+		//symbol.setAttribute('dragstart', drag(event));
 		//symbol.ondragstart = "drag(event)";
 		document.getElementById("symbolTest").appendChild(symbol);
 	}
