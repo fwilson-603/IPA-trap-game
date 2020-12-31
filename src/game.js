@@ -6,6 +6,11 @@ var csymbol = 'c';
 var psymbol = 'p';
 var tsymbol = 't';
 
+var plosive = 'plosive';
+var alveolar = 'alveolar';
+var velar = 'velar';
+var voiced = 'voiced';
+
 var validPlaces = ["velar", "bilabial"];
 
 var data1 = "velar"
