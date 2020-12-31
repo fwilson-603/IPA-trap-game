@@ -74,7 +74,7 @@
 
 <p>Click the button below to generate symbols.</p>
 			
-<button onclick="generateSymbols()">Generate symbols</button>
+<button id="symbolButton" onclick="generateSymbols()">Generate symbols</button>
 
 <div
      id="symbolTest"
@@ -87,6 +87,7 @@
 
 <script>
 function generateSymbols() {
+	var btn = document.getElementById("symbolButton");
 	for (i=0; i<symbolNames.length; i++) {
 		var symbol = document.createElement('div');
 		symbol.id = symbolNames[i];
@@ -96,6 +97,7 @@ function generateSymbols() {
 		symbol.ondragstart = "drag(event)";
 		document.getElementById("symbolTest").appendChild(symbol);
 	}
+	btn.remove();
 }
 </script>
 			
