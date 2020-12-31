@@ -87,24 +87,14 @@
 			
 <p id="tester1">This is another pieces of test text.</p>
 
-<script>
-function generateSymbols() {
-	var btn = document.getElementById("symbolButton");
-	for (i=0; i<symbolNames.length; i++) {
-		var symbol = document.createElement('div');
-		var name = symbolNames[i];
-		symbol.id = name;
-		symbol.className = 'IPAsymbol';
-		symbol.innerHTML = window[name];
-		symbol.draggable = "true";
-		symbol.addEventListener("dragstart", function() {
-			drag(event);
-		});
-		document.getElementById("symbolTest").appendChild(symbol);
-	}
-	btn.remove();
-}
-</script>
+<div
+     id="descriptorTest"
+     ondrop="drop0(event)"
+     ondragover="allowDrop(event)"
+     ondragleave="dragLeave(event)"
+>
+<p>This is the descriptor test div box.</p>
+</div>
 			
 <h2>Test Zone</h2>	
 			
