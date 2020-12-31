@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<title>Test Game 18</title>
+			<title>Test Game 19</title>
 			<!-- link to main stylesheet -->
 			<link rel="stylesheet" type="text/css" href="css/game.css">
 			<!-- link to main js document -->
@@ -97,13 +97,23 @@ function generateSymbols() {
 		symbol.className = 'IPAsymbol';
 		symbol.innerHTML = window[name];
 		symbol.draggable = "true";
-		symbol.addEventListener("dragstart", function() {
-		document.getElementById("tester1").innerHTML = "Hello World";
-		});
 		//symbol.addEventListener('dragstart', drag(event));
 		//symbol.setAttribute(ondragstart, "drag(event)");
 		//symbol.setAttribute('dragstart', drag(event));
 		//symbol.ondragstart = "drag(event)";
+		//symbol.addEventListener("dragstart", function() {
+		//document.getElementById("tester1").innerHTML = "Hello World";
+		//});
+		symbol.addEventListener("dragstart", drag());
+		//symbol.addEventListener("dragstart", function drag(event) {
+		//event.dataTransfer.setData("text", event.target.id);
+		//});
+		//symbol.addEventListener("dragstart", function(event) {
+		//event.dataTransfer.setData("text", event.target.id);
+		//});
+		//symbol.addEventListener("dragstart", function() {
+		//event.dataTransfer.setData("text", event.target.id);
+		//});
 		document.getElementById("symbolTest").appendChild(symbol);
 	}
 	btn.remove();
