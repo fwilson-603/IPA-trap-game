@@ -92,7 +92,7 @@ function generateSymbols() {
 		var symbol = document.createElement('div');
 		symbol.id = symbolNames[i];
 		symbol.className = 'IPAsymbol';
-		symbol.innerHTML = symbolNames[i];
+		symbol.innerHTML = JSON.parse(symbolNames[i]);
 		symbol.draggable = "true";
 		//symbol.ondragstart = "drag(event)";
 		document.getElementById("symbolTest").appendChild(symbol);
