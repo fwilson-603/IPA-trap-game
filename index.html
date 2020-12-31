@@ -87,8 +87,10 @@
 
 <script>
 function generateSymbols() {
-	var symbol = document.createElement("P");
-	symbol.innerText = "This is the test symbol";
+	var symbol = document.createElement('div');
+	symbol.id = 'ksymbol';
+	symbol.className = 'test';
+	symbol.innerHTML = '<p>k</p>';
 	document.getElementById("symbolTest").appendChild(symbol);
 }
 </script>
