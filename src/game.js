@@ -24,6 +24,11 @@ var k_symbol = {place:"velar", manner:"plosive", voicing:"voiceless", nasality:"
 var c_symbol = {place:"palatal", manner:"plosive", voicing:"voiceless", nasality:"oral"};
 var t_symbol = {place:"alveolar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
 
+var test = 'foo';
+
+function foo() {
+  alert('foo');
+}
 
 function randomizeSymbols() {
   var i;
