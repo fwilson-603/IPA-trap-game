@@ -1,5 +1,7 @@
 var dragged;
 
+var symbolNames = ['ksymbol', 'csymbol', 'psymbol', 'tsymbol'];
+
 var validPlaces = ["velar", "bilabial"];
 
 var data1 = "velar"
