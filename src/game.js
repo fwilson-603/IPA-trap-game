@@ -6,10 +6,7 @@ var csymbol = 'c';
 var psymbol = 'p';
 var tsymbol = 't';
 
-var plosive = 'plosive';
-var alveolar = 'alveolar';
-var velar = 'velar';
-var voiced = 'voiced';
+var descriptorNames = ['plosive', 'alveolar', 'velar', 'voiced'];
 
 var validPlaces = ["velar", "bilabial"];
 
@@ -37,6 +34,37 @@ function foo() {
 
 function pageLoad() {
   randomizeSymbols();
+  generateDescriptors();
+}
+
+function generateDescriptors() {
+  for (i=0; i<descriptorNames.length; i++) {
+   var descriptor = document.createElement('div');
+   var name = descriptorNames[i];
+   descriptor.id = name;
+   descriptor.className = 'descriptor';
+   descriptor.innerHTML = window[name];
+   descriptor.draggable = "true";
+    // will need to add an event listener to get it to do anything when dragged
+   document.getElementById("descriptorTest").appendChild(descriptor);
+  }
+}
+
+function generateSymbols() {
+	var btn = document.getElementById("symbolButton");
+	for (i=0; i<symbolNames.length; i++) {
+		var symbol = document.createElement('div');
+		var name = symbolNames[i];
+		symbol.id = name;
+		symbol.className = 'IPAsymbol';
+		symbol.innerHTML = window[name];
+		symbol.draggable = "true";
+		symbol.addEventListener("dragstart", function() {
+			drag(event);
+		});
+		document.getElementById("symbolTest").appendChild(symbol);
+	}
+	btn.remove();
 }
 
 function randomizeSymbols() {
