@@ -19,6 +19,11 @@ var IPArules = {
 
 var IPArules2 = ['velar'];
 
+var p_symbol = {place:"bilabial", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var k_symbol = {place:"velar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var c_symbol = {place:"palatal", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var t_symbol = {place:"alveolar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+
 
 function randomizeSymbols() {
   var i;
@@ -84,8 +89,3 @@ function testTruth() {
   document.getElementById('it').innerHTML="It's false!"
   }
 }
-
-var p_symbol = {place:"bilabial", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-var k_symbol = {place:"velar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-var c_symbol = {place:"palatal", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-var t_symbol = {place:"alveolar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
