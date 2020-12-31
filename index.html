@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<title>Test Game 11</title>
+			<title>Test Game 12</title>
 			<!-- link to main stylesheet -->
 			<link rel="stylesheet" type="text/css" href="css/game.css">
 			<!-- link to main js document -->
@@ -93,7 +93,7 @@ function generateSymbols() {
 		var name = symbolNames[i];
 		symbol.id = name;
 		symbol.className = 'IPAsymbol';
-		symbol.innerHTML = name;
+		symbol.innerHTML = window[name];
 		symbol.draggable = "true";
 		//symbol.ondragstart = "drag(event)";
 		document.getElementById("symbolTest").appendChild(symbol);
