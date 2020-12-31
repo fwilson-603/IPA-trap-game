@@ -16,7 +16,17 @@ var IPArules = {
 var IPArules2 = ['velar'];
 
 
-
+function randomizeSymbols() {
+  var i;
+  var j;
+  var k;
+  for (i = symbolNames.length -1; i > 0; i--) {
+    j = Math.floor(Math.random() * i);
+    k = symbolNames[i];
+    symbolNames[i] = symbolNames[j];
+    symbolNames[j] = k;
+  }
+}
 
 function allowDrop(event) {
   event.preventDefault();
