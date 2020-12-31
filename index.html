@@ -87,11 +87,13 @@
 
 <script>
 function generateSymbols() {
-	var symbol = document.createElement('div');
-	symbol.id = 'ksymbol';
-	symbol.className = 'test';
-	symbol.innerHTML = 'k';
-	document.getElementById("symbolTest").appendChild(symbol);
+	for (i=0; i<symbolNames.length - 1; i++) {
+		var symbol = document.createElement('div');
+		symbol.id = symbolNames[i];
+		symbol.className = 'IPAsymbol';
+		symbol.innerHTML = symbolNames[i];
+		document.getElementById("symbolTest").appendChild(symbol);
+	}
 }
 </script>
 			
