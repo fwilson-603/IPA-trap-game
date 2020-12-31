@@ -97,26 +97,9 @@ function generateSymbols() {
 		symbol.className = 'IPAsymbol';
 		symbol.innerHTML = window[name];
 		symbol.draggable = "true";
-		//symbol.addEventListener('dragstart', drag(event));
-		//symbol.setAttribute(ondragstart, "drag(event)");
-		//symbol.setAttribute('dragstart', drag(event));
-		//symbol.ondragstart = "drag(event)";
-		//symbol.addEventListener("dragstart", function() {
-		//document.getElementById("tester1").innerHTML = "Hello World";
-		//});
-		//symbol.addEventListener("dragstart", drag());
 		symbol.addEventListener("dragstart", function() {
 			drag(event);
 		});
-		//symbol.addEventListener("dragstart", function drag(event) {
-		//event.dataTransfer.setData("text", event.target.id);
-		//});
-		//symbol.addEventListener("dragstart", function(event) {
-		//event.dataTransfer.setData("text", event.target.id);
-		//});
-		//symbol.addEventListener("dragstart", function() {
-		//event.dataTransfer.setData("text", event.target.id);
-		//});
 		document.getElementById("symbolTest").appendChild(symbol);
 	}
 	btn.remove();
