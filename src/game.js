@@ -42,7 +42,7 @@ function generateDescriptors() {
    		var descriptor = document.createElement('div');
    		var name = descriptorNames[i];
    		descriptor.id = name;
-  		descriptor.className = 'descriptor';
+  		descriptor.className = 'IPAsymbol';
    		descriptor.innerHTML = name;
    		descriptor.draggable = "true";
     		// will need to add an event listener to get it to do anything when dragged
