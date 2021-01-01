@@ -42,9 +42,9 @@ function generateDescriptors() {
    		var descriptor = document.createElement('div');
    		var name = descriptorNames[i];
    		descriptor.id = name;
-  		descriptor.className = 'descriptor';
+  		//descriptor.className = 'descriptor';
    		descriptor.innerHTML = window[name];
-   		descriptor.draggable = "true";
+   		//descriptor.draggable = "true";
     		// will need to add an event listener to get it to do anything when dragged
    		document.getElementById("descriptorTest").appendChild(descriptor);
   }
