@@ -34,10 +34,10 @@ function foo() {
 
 function pageLoad() {
   randomizeSymbols();
+  generateDescriptors();
 }
 
 function generateDescriptors() {
-	var btn = document.getElementById("descriptorButton");
  	for (i=0; i<descriptorNames.length; i++) {
    		var descriptor = document.createElement('div');
    		var name = descriptorNames[i];
@@ -48,7 +48,6 @@ function generateDescriptors() {
     		// will need to add an event listener to get it to do anything when dragged
    		document.getElementById("descriptorTest").appendChild(descriptor);
   }
-	btn.remove();
 }
 
 function generateSymbols() {
