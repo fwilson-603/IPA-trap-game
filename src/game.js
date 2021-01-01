@@ -38,9 +38,9 @@ function pageLoad() {
 
 function generateDescriptors() {
 	var btn = document.getElementById("descriptorButton");
- 	for (i=0; i<descriptorNames.length; i++) {
+ 	for (i=0; i<symbolNames.length; i++) {
    		var descriptor = document.createElement('div');
-   		var name = descriptorNames[i];
+   		var name = symbolNames[i];
    		descriptor.id = name;
   		//descriptor.className = 'descriptor';
    		descriptor.innerHTML = window[name];
