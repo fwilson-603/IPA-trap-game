@@ -38,12 +38,12 @@ function pageLoad() {
 
 function generateDescriptors() {
 	var btn = document.getElementById("descriptorButton");
- 	for (i=0; i<symbolNames.length; i++) {
+ 	for (i=0; i<descriptorNames.length; i++) {
    		var descriptor = document.createElement('div');
-   		var name = symbolNames[i];
+   		var name = descriptorNames[i];
    		descriptor.id = name;
   		//descriptor.className = 'descriptor';
-   		descriptor.innerHTML = window[name];
+   		descriptor.innerHTML = name;
    		//descriptor.draggable = "true";
     		// will need to add an event listener to get it to do anything when dragged
    		document.getElementById("descriptorTest").appendChild(descriptor);
