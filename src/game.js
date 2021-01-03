@@ -110,7 +110,7 @@ function drop(event) {
 	var boxArray = [];  //creates the empty array 'boxArray'
 	var boxId = event.target.id; //creates the variable 'boxId', containing the id of the target (i.e. the box being dropped into)
 	document.getElementById("test1").innerHTML = typeof boxId;
-	var boxAllow = window[boxId]; //creates the variable 'boxAllow', containing the contents of the global variable called by the contents of 'boxId',
+	var boxAllow = window[boxId][0]; //creates the variable 'boxAllow', containing the contents of the global variable called by the contents of 'boxId',
 	//this should be an array of the acceptable ids that the box will let pass.
 	document.getElementById("test2").innerHTML = typeof boxAllow;
 	event.target.appendChild(document.getElementById(data)); //adds the dragged object to the target (the box)
