@@ -106,7 +106,8 @@ function drop(event) {
 	//this should be an array of the acceptable ids that the box will let pass.
 	//document.getElementById("test3").innerHTML = boxAllow;
 	event.target.appendChild(document.getElementById(data)); //adds the dragged object to the target (the box)
-	boxArray.appendChild(boxAllow); //adds the allowed ids for the box to the empty array called 'boxArray'
+	//boxArray.appendChild(boxAllow); //adds the allowed ids for the box to the empty array called 'boxArray'
+	boxArray.push(boxAllow);
 	document.getElementById("test1").innerHTML = boxArray;
 	test = boxArray.indexOf(data); //if the dragged item's id is in the array of allowed items, 'test' will be set to 0 or higher, if not, 'undefined'
 	document.getElementById("test2").innerHTML = test;
