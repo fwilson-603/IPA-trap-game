@@ -49,7 +49,7 @@ function foo() {
 function pageLoad() {
   randomizeSymbols();
   generateDescriptors();
-  testFunction();
+  //testFunction();
 }
 
 function generateDescriptors() {
@@ -105,7 +105,7 @@ function drag(event) {
 function drop(event) {
 	event.preventDefault(); //prevents the default drag-and-drop disallowed
 	var data = event.dataTransfer.getData("text"); //puts the data stored by the drag(event) function (the dragged object's id) in 'data'
-	//document.getElementById("test1").innerHTML = data;
+	document.getElementById("test1").innerHTML = typeof data;
 	var test; //creates the variable 'test'
 	var boxArray = [];  //creates the empty array 'boxArray'
 	var boxId = event.target.id; //creates the variable 'boxId', containing the id of the target (i.e. the box being dropped into)
@@ -116,9 +116,9 @@ function drop(event) {
 	event.target.appendChild(document.getElementById(data)); //adds the dragged object to the target (the box)
 	//boxArray.appendChild(boxAllow); //adds the allowed ids for the box to the empty array called 'boxArray'
 	boxArray.push(boxAllow);
-	document.getElementById("test1").innerHTML = boxArray;
+	//document.getElementById("test1").innerHTML = boxArray;
 	test = boxArray.indexOf(data); //if the dragged item's id is in the array of allowed items, 'test' will be set to 0 or higher, if not, 'undefined'
-	document.getElementById("test2").innerHTML = test;
+	//document.getElementById("test2").innerHTML = test;
 	if (test >= 0) { //this should test if the 'test' variable contains the number 0 or higher, and come back green if so, red if not.
 		event.target.style.background = '#006400';
 	}
