@@ -87,15 +87,22 @@ function drag(event) {
   event.dataTransfer.setData("text", event.target.id);
 }
 
-function drop(event) {
+function TESTdrop(event) {
+	event.preventDefault();
+	var data = event.dataTransfer.getData("text");
+	event.target.appendChild(document.getElementByID(data));
+	//add more code to actually produce a tested result
+}
+
+function drop(event) { //remove 'TEST' to run as the main function
   event.preventDefault();
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
-  document.getElementById("test1").innerHTML = data;
-  var rules = IPArules[data];
-  document.getElementById("test2").innerHTML = IPArules2;
-  document.getElementById("test3").innerHTML = IPArules2[0];
-  var test = validPlaces.indexOf(data1);
+  document.getElementById("test1").innerHTML = data; //tests what 'data' is by setting the first 'p' in the test zone to 'data'.
+  var rules = IPArules[data]; // Tries to access the value of the id stored in the object 'IPArules' - don't think this'll work
+  document.getElementById("test2").innerHTML = IPArules2; //tests what the 'IPArules2' global variable contains
+  document.getElementById("test3").innerHTML = IPArules2[0]; //tests what index 0 of the 'IPArules2' global variable contains
+  var test = validPlaces.indexOf(data1); //always 0
   if (test >= 0) {
     event.target.style.background = '#006400';
   }
