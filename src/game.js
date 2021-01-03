@@ -1,5 +1,12 @@
 var dragged;
 
+var dataTEST = 'ksymbol';
+var boxArrayTEST = ['ksymbol'];
+var testTEST = boxArrayTEST.indexOf(dataTEST);
+function testFunction() {
+	document.getElementById("test1").innerHTML = testTEST;
+}
+	
 var symbolNames = ['ksymbol', 'csymbol', 'psymbol', 'tsymbol'];
 var ksymbol = 'k';
 var csymbol = 'c';
@@ -42,6 +49,7 @@ function foo() {
 function pageLoad() {
   randomizeSymbols();
   generateDescriptors();
+  testFunction();
 }
 
 function generateDescriptors() {
