@@ -94,7 +94,7 @@ function drag(event) {
   event.dataTransfer.setData("text", event.target.id);
 }
 
-function TESTdrop(event) {
+function drop(event) {
 	event.preventDefault(); //prevents the default drag-and-drop disallowed
 	var data = event.dataTransfer.getData("text"); //puts the data stored by the drag(event) function (the dragged object's id) in 'data'
 	var test; //creates the variable 'test'
@@ -113,7 +113,7 @@ function TESTdrop(event) {
 	}
 }
 
-function drop(event) { //remove 'TEST' to run as the main function
+function TESTdrop(event) { //remove 'TEST' to run as the main function
   event.preventDefault();
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
