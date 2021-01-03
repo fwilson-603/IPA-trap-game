@@ -111,6 +111,9 @@ function drop(event) {
 	else {
 		event.target.style.background = '#8B0000';
 	}
+	document.getElementById("test1").innerHTML = data;
+	document.getElementById("test2").innerHTML = boxId;
+	document.getElementById("test3").innerHTML = boxAllow;
 }
 
 function TESTdrop(event) { //remove 'TEST' to run as the main function
