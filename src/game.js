@@ -28,6 +28,13 @@ var t_symbol = {place:"alveolar", manner:"plosive", voicing:"voiceless", nasalit
 
 var test = 'foo';
 
+var plosiveBox = ['ksymbol', 'psymbol', 'csymbol', 'tsymbol'];
+var alveolarBox = ['tsymbol'];
+var bilabialBox = ['psymbol'];
+var palatalBox = ['csymbol'];
+var velarBox = ['ksymbol'];
+var fricativeBox = [];
+
 function foo() {
   alert('foo');
 }
@@ -88,10 +95,22 @@ function drag(event) {
 }
 
 function TESTdrop(event) {
-	event.preventDefault();
-	var data = event.dataTransfer.getData("text");
-	event.target.appendChild(document.getElementByID(data));
-	//add more code to actually produce a tested result
+	event.preventDefault(); //prevents the default drag-and-drop disallowed
+	var data = event.dataTransfer.getData("text"); //puts the data stored by the drag(event) function (the dragged object's id) in 'data'
+	var test; //creates the variable 'test'
+	var boxArray = [];  //creates the empty array 'boxArray'
+	var boxId = event.target.id; //creates the variable 'boxId', containing the id of the target (i.e. the box being dropped into)
+	var boxAllow = window[boxId]; //creates the variable 'boxAllow', containing the contents of the global variable called by the contents of 'boxId',
+	//this should be an array of the acceptable ids that the box will let pass.
+	event.target.appendChild(document.getElementById(data)); //adds the dragged object to the target (the box)
+	boxArray.appendChild(boxAllow); //adds the allowed ids for the box to the empty array called 'boxArray'
+	test = boxArray.indexOf(data); //if the dragged item's id is in the array of allowed items, 'test' will be set to 0 or higher, if not, 'undefined'
+	if (test >= 0) { //this should test if the 'test' variable contains the number 0 or higher, and come back green if so, red if not.
+		event.target.style.background = '#006400';
+	}
+	else {
+		event.target.style.background = '#8B0000';
+	}
 }
 
 function drop(event) { //remove 'TEST' to run as the main function
