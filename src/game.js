@@ -6,12 +6,35 @@ var testTEST = boxArrayTEST.indexOf(dataTEST);
 function testFunction() {
 	document.getElementById("test1").innerHTML = testTEST;
 }
-	
+
+// Leftover from previous code, not needed for drop(event) (I think)
 var symbolNames = ['ksymbol', 'csymbol', 'psymbol', 'tsymbol'];
-var ksymbol = 'k';
-var csymbol = 'c';
-var psymbol = 'p';
-var tsymbol = 't';
+var TESTksymbol = 'k';
+var TESTcsymbol = 'c';
+var TESTpsymbol = 'p';
+var TESTtsymbol = 't';
+
+// To get the second drop(event) function working, use the global variables below
+var psymbol = {place:"bilabial", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var ksymbol = {place:"velar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var csymbol = {place:"palatal", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var tsymbol = {place:"alveolar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+
+// To get the first drop(event) function working, use the global variables below
+var TESTplosiveBox = ['ksymbol', 'psymbol', 'csymbol', 'tsymbol'];
+var TESTalveolarBox = ['tsymbol'];
+var TESTbilabialBox = ['psymbol'];
+var TESTpalatalBox = ['csymbol'];
+var TESTvelarBox = ['ksymbol'];
+var TESTfricativeBox = [];
+
+// To get the second drop(event) function working, use the global variables below
+var plosiveBox = ['plosive'];
+var alveolarBox = ['alveolar'];
+var bilabialBox = ['bilabial'];
+var palatalBox = ['palatal'];
+var velarBox = ['velar'];
+var fricativeBox = ['fricative'];
 
 var descriptorNames = ['plosive', 'alveolar', 'velar', 'voiced'];
 
@@ -28,19 +51,7 @@ var IPArules = {
 
 var IPArules2 = ['velar'];
 
-var p_symbol = {place:"bilabial", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-var k_symbol = {place:"velar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-var c_symbol = {place:"palatal", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-var t_symbol = {place:"alveolar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-
 var test = 'foo';
-
-var plosiveBox = ['ksymbol', 'psymbol', 'csymbol', 'tsymbol'];
-var alveolarBox = ['tsymbol'];
-var bilabialBox = ['psymbol'];
-var palatalBox = ['csymbol'];
-var velarBox = ['ksymbol'];
-var fricativeBox = [];
 
 function foo() {
   alert('foo');
@@ -102,7 +113,10 @@ function drag(event) {
   event.dataTransfer.setData("text", event.target.id);
 }
 
-function drop(event) {
+// Function below needs global variables of the type: var velarBox = ['ksymbol'];
+// This is the first drop(event) function
+
+function TESTdrop(event) {
 	event.preventDefault(); //prevents the default drag-and-drop disallowed
 	var data = event.dataTransfer.getData("text"); //puts the data stored by the drag(event) function (the dragged object's id) in 'data'
 	var test; //creates the variable 'test'
@@ -111,12 +125,40 @@ function drop(event) {
 	//this should be an array of the acceptable ids that the box will let pass.
 	event.target.appendChild(document.getElementById(data)); //adds the dragged object to the target (the box)
 	test = boxAllow.indexOf(data); //if the dragged item's id is in the array of allowed items, 'test' will be set to 0 or higher, if not, 'undefined'
-	document.getElementById("test3").innerHTML = test;
 	if (test >= 0) { //this should test if the 'test' variable contains the number 0 or higher, and come back green if so, red if not.
 		event.target.style.background = '#006400';
 	}
 	else {
 		event.target.style.background = '#8B0000';
+	};
+}
+
+// For testing: document.getElementById("test3").innerHTML = test;
+
+// Function below needs global variables of the types:
+// var velarBox = ['velar']
+// var ksymbol = {place:'velar', manner:'plosive', voicing:'voiceless'}
+// This is the second drop(event) function
+
+function drop(event) {
+	event.preventDefault(); //prevent default drag-and-drop cancel
+	var data = event.dataTransfer.getData("text"); //dragged object ID
+	var boxId = event.target.id; //box object ID
+	var symbolArray = window[data]; //set symbolArray to the contents of the global variable that is the dragged object ID
+	var boxArray = window[boxId]; //set boxArray to the contents of the global variable that is the box object ID
+	var x; //empty variable for the 'for' loop later
+	var count = 0; //define a variable 'count' as 0 to increment later
+	event.target.appendChild(document.getElementById(data)); //append the dragged object to the div box
+	for (x in symbolArray) {	// loop through the symbolArray
+		if (symbolArray[x] == boxArray[0]) {	// if the current item in the symbol array is the same as the first item in the boxArray
+			count++;	// increment the 'count' variable by 1
+		}
+	};
+	if (count > 0) {	// if the 'count' variable is greater than 0 (has been incremented, i.e. a match was found)
+		event.target.style.background = '#006400';	// set the box background to green
+	}
+	else {
+		event.target.style.background = '#8B0000';	// otherwise set the box background to red
 	};
 }
 
