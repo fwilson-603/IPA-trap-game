@@ -47,6 +47,9 @@ function doEverythingSymbols() {
 	for x in boxes {
 		generateSymbols(x);
 	};
+	document.getElementById("test1").innerHTML = dropBox1Symbols;
+	document.getElementById("test2").innerHTML = dropBox2Symbols;
+	document.getElementById("test3").innerHTML = dropBox3Symbols;
 }
 
 function randomizeSymbols() {
