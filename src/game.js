@@ -1,6 +1,7 @@
 var dragged;
 
 var symbolNames = ['ksymbol', 'csymbol', 'psymbol', 'tsymbol'];
+var descriptorNames = ['plosive', 'alveolar', 'velar', 'voiced'];
 
 var psymbol = {place:"bilabial", manner:"plosive", voicing:"voiceless", nasality:"oral"};
 var ksymbol = {place:"velar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
