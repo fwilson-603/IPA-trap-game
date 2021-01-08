@@ -40,7 +40,7 @@ function generateSymbols() {
 		var name = symbolNames[i];
 		symbol.id = name;
 		symbol.className = 'IPAsymbol';
-		symbol.innerHTML = window[name][img];
+		symbol.innerHTML = window[name]["img"];
 		symbol.draggable = "true";
 		symbol.addEventListener("dragstart", function() {
 			drag(event);
