@@ -44,10 +44,7 @@ function generateDescriptors() {
 
 function doEverythingSymbols() {
 	assignSymbols();
-	for x in boxes {
-		document.getElementById("test1").innerHTML = x;
-		generateSymbols(x);
-	};
+	generateSymbols();
 }
 
 function randomizeSymbols() {
@@ -71,7 +68,22 @@ function assignSymbols() { //assign the symbols in the array symbolNames to sepa
 	dropBox6Symbols = symbolNames.slice(50,60);
 }
 
-function generateSymbols(dropBoxX) { //in progress: separating out the function
+function generateSymbols() { //in progress new function
+	for (i=0; i<dropBox1Symbols.length; i++) {
+		var symbol = document.createElement('div');
+		var name = dropBox1Symbols[i];
+		symbol.id = name;
+		symbol.className = 'IPAsymbol';
+		symbol.innerHTML = window[name]["img"];
+		symbol.draggable = "true";
+		symbol.addEventListener("dragstart", function() {
+			drag(event);
+		});
+		document.getElementById("dropBox1").appendChild(symbol);
+	}
+}
+
+function TESTgenerateSymbols(dropBoxX) { //in progress: separating out the function
 	var x = dropBoxX + 'Symbols'; // suspicious of this part
 	var boxSymbolsArray = window[x];
 	for (i=0; i<boxSymbolsArray.length; i++) {
@@ -103,21 +115,6 @@ function TESTgenerateSymbols() {
 		document.getElementById("symbolTest").appendChild(symbol);
 	}
 	btn.remove();
-}
-
-function TESTgenerateSymbols() { //in progress new function
-	for (i=0; i<dropBox1Symbols.length; i++) {
-		var symbol = document.createElement('div');
-		var name = dropBox1Symbols[i];
-		symbol.id = name;
-		symbol.className = 'IPAsymbol';
-		symbol.innerHTML = window[name]["img"];
-		symbol.draggable = "true";
-		symbol.addEventListener("dragstart", function() {
-			drag(event);
-		});
-		document.getElementById("dropBox1").appendChild(symbol);
-	}
 }
 
 function allowDrop(event) {
