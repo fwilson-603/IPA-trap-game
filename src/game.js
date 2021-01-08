@@ -1,5 +1,7 @@
 var dragged;
 
+var symbolNames = ['ksymbol', 'csymbol', 'psymbol', 'tsymbol'];
+
 var psymbol = {place:"bilabial", manner:"plosive", voicing:"voiceless", nasality:"oral"};
 var ksymbol = {place:"velar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
 var csymbol = {place:"palatal", manner:"plosive", voicing:"voiceless", nasality:"oral"};
