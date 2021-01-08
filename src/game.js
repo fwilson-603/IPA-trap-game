@@ -26,6 +26,7 @@ var boxes = ['dropBox1', 'dropBox2', 'dropBox3', 'dropBox4', 'dropBox5', 'dropBo
 
 function pageLoad() {
   generateDescriptors();
+  randomizeSymbols();
 }
 
 function generateDescriptors() {
@@ -42,11 +43,10 @@ function generateDescriptors() {
 }
 
 function doEverythingSymbols() {
-	randomizeSymbols();
 	assignSymbols();
-	for x in boxes {
-		generateSymbols(x);
-	};
+//	for x in boxes {
+//		generateSymbols(x);
+//	};
 	document.getElementById("test1").innerHTML = dropBox1Symbols;
 	document.getElementById("test2").innerHTML = dropBox2Symbols;
 	document.getElementById("test3").innerHTML = dropBox3Symbols;
