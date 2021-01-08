@@ -65,12 +65,7 @@ function randomizeSymbols() {
 }
 
 function assignSymbols() { //assign the symbols in the array symbolNames to separate dropboxes
-	var dropBox1Symbols = symbolNames.slice(0,10);
-	var dropBox2Symbols = symbolNames.slice(10,20);
-	var dropBox3Symbols = symbolNames.slice(20,30);
-	var dropBox4Symbols = symbolNames.slice(30,40);
-	var dropBox5Symbols = symbolNames.slice(40,50);
-	var dropBox6Symbols = symbolNames.slice(50,60);
+	var dropBox1Symbols = symbolNames.slice(0);
 }
 
 function generateSymbols(dropBoxX) { //in progress: separating out the function
