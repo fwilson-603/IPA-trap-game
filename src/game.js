@@ -1,34 +1,10 @@
 var dragged;
 
-var dataTEST = 'ksymbol';
-var boxArrayTEST = ['ksymbol'];
-var testTEST = boxArrayTEST.indexOf(dataTEST);
-function testFunction() {
-	document.getElementById("test1").innerHTML = testTEST;
-}
-
-// Leftover from previous code, not needed for drop(event) (I think)
-var symbolNames = ['ksymbol', 'csymbol', 'psymbol', 'tsymbol'];
-var TESTksymbol = 'k';
-var TESTcsymbol = 'c';
-var TESTpsymbol = 'p';
-var TESTtsymbol = 't';
-
-// To get the second drop(event) function working, use the global variables below
 var psymbol = {place:"bilabial", manner:"plosive", voicing:"voiceless", nasality:"oral"};
 var ksymbol = {place:"velar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
 var csymbol = {place:"palatal", manner:"plosive", voicing:"voiceless", nasality:"oral"};
 var tsymbol = {place:"alveolar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
 
-// To get the first drop(event) function working, use the global variables below
-var TESTplosiveBox = ['ksymbol', 'psymbol', 'csymbol', 'tsymbol'];
-var TESTalveolarBox = ['tsymbol'];
-var TESTbilabialBox = ['psymbol'];
-var TESTpalatalBox = ['csymbol'];
-var TESTvelarBox = ['ksymbol'];
-var TESTfricativeBox = [];
-
-// To get the second drop(event) function working, use the global variables below
 var plosiveBox = ['plosive'];
 var alveolarBox = ['alveolar'];
 var bilabialBox = ['bilabial'];
@@ -36,31 +12,9 @@ var palatalBox = ['palatal'];
 var velarBox = ['velar'];
 var fricativeBox = ['fricative'];
 
-var descriptorNames = ['plosive', 'alveolar', 'velar', 'voiced'];
-
-var validPlaces = ["velar", "bilabial"];
-
-var data1 = "velar"
-
-var IPArules = {
-  'ksymbol': { place: ['velar'] },
-  'psymbol': { place: ['bilabial'] },
-  'csymbol': { place: ['palatal'] },
-  'tsymbol': { place: ['alveolar'] }
-};
-
-var IPArules2 = ['velar'];
-
-var test = 'foo';
-
-function foo() {
-  alert('foo');
-}
-
 function pageLoad() {
   randomizeSymbols();
   generateDescriptors();
-  //testFunction();
 }
 
 function generateDescriptors() {
@@ -113,33 +67,11 @@ function drag(event) {
   event.dataTransfer.setData("text", event.target.id);
 }
 
-// Function below needs global variables of the type: var velarBox = ['ksymbol'];
-// This is the first drop(event) function
-
-function TESTdrop(event) {
-	event.preventDefault(); //prevents the default drag-and-drop disallowed
-	var data = event.dataTransfer.getData("text"); //puts the data stored by the drag(event) function (the dragged object's id) in 'data'
-	var test; //creates the variable 'test'
-	var boxId = event.target.id; //creates the variable 'boxId', containing the id of the target (i.e. the box being dropped into)
-	var boxAllow = window[boxId]; //creates the variable 'boxAllow', containing the contents of the global variable called by the contents of 'boxId',
-	//this should be an array of the acceptable ids that the box will let pass.
-	event.target.appendChild(document.getElementById(data)); //adds the dragged object to the target (the box)
-	test = boxAllow.indexOf(data); //if the dragged item's id is in the array of allowed items, 'test' will be set to 0 or higher, if not, 'undefined'
-	if (test >= 0) { //this should test if the 'test' variable contains the number 0 or higher, and come back green if so, red if not.
-		event.target.style.background = '#006400';
-	}
-	else {
-		event.target.style.background = '#8B0000';
-	};
-}
-
 // For testing: document.getElementById("test3").innerHTML = test;
 
 // Function below needs global variables of the types:
 // var velarBox = ['velar']
 // var ksymbol = {place:'velar', manner:'plosive', voicing:'voiceless'}
-// This is the second drop(event) function
-
 function drop(event) {
 	event.preventDefault(); //prevent default drag-and-drop cancel
 	var data = event.dataTransfer.getData("text"); //dragged object ID
@@ -168,24 +100,6 @@ function drop0(event) {
   event.target.appendChild(document.getElementById(data));
 }
 
-function canCheck(symbol) {
- // var rules = IPArules[symbol];
- // var validPlaces = rules.place;
-  if (validPlaces.includes(data1)) {
-    return true;
-  }
-  return false;
-}
-
 function dragLeave(event) {
   event.target.style.background='';
-}
-
-function testTruth() {
-  if (validPlaces.includes(data1)) {
-  document.getElementById('it').innerHTML="It's true!"
-  }
-  else {
-  document.getElementById('it').innerHTML="It's false!"
-  }
 }
