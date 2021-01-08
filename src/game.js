@@ -3,10 +3,10 @@ var dragged;
 var symbolNames = ['ksymbol', 'csymbol', 'psymbol', 'tsymbol'];
 var descriptorNames = ['plosive', 'alveolar', 'velar', 'voiced'];
 
-var psymbol = {place:"bilabial", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-var ksymbol = {place:"velar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-var csymbol = {place:"palatal", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-var tsymbol = {place:"alveolar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var psymbol = {img:"p", place:"bilabial", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var ksymbol = {img:"k", place:"velar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var csymbol = {img:"c", place:"palatal", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var tsymbol = {img:"t", place:"alveolar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
 
 var plosiveBox = ['plosive'];
 var alveolarBox = ['alveolar'];
@@ -40,7 +40,7 @@ function generateSymbols() {
 		var name = symbolNames[i];
 		symbol.id = name;
 		symbol.className = 'IPAsymbol';
-		symbol.innerHTML = window[name];
+		symbol.innerHTML = window[name][img];
 		symbol.draggable = "true";
 		symbol.addEventListener("dragstart", function() {
 			drag(event);
