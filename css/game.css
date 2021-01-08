@@ -43,12 +43,12 @@
   color: #000;
 }
 
-#plosiveBox,
-#alveolarBox,
-#bilabialBox,
-#palatalBox,
-#velarBox,
-#fricativeBox {
+#dropBox1,
+#dropBox2,
+#dropBox3,
+#dropBox4,
+#dropBox5,
+#dropBox6 {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
