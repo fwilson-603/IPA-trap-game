@@ -44,12 +44,10 @@ function generateDescriptors() {
 
 function doEverythingSymbols() {
 	assignSymbols();
-//	for x in boxes {
-//		generateSymbols(x);
-//	};
-	document.getElementById("test1").innerHTML = dropBox1Symbols;
-	document.getElementById("test2").innerHTML = dropBox2Symbols;
-	document.getElementById("test3").innerHTML = dropBox3Symbols;
+	for x in boxes {
+		document.getElementById("test1").innerHTML = x;
+		generateSymbols(x);
+	};
 }
 
 function randomizeSymbols() {
