@@ -141,7 +141,7 @@ function drag(event) {
 // var velarBox = ['velar']
 // var ksymbol = {place:'velar', manner:'plosive', voicing:'voiceless'}
 //this is now test, but it's the most recent working model
-function drop(event) {
+function TESTdrop(event) {
 	event.preventDefault(); //prevent default drag-and-drop cancel
 	var data = event.dataTransfer.getData("text"); //dragged object ID
 	var boxId = event.target.id; //box object ID
@@ -165,7 +165,7 @@ function drop(event) {
 
 //new drop(event) function, this one checking descriptors, not symbols
 //currently set to only work for dropBox1
-function TESTdrop(event) {
+function drop(event) {
 	event.preventDefault(); //prevent default drag-and-drop cancel
 	var data = event.dataTransfer.getData("text"); //descriptor object Id
 	dropBox1Descriptors.push(data); //add the dropped element to the array of descriptors for the dropBox
