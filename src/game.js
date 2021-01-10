@@ -3,10 +3,10 @@ var dragged;
 var symbolNames = ['ksymbol', 'csymbol', 'psymbol', 'tsymbol'];
 var descriptorNames = ['plosive', 'alveolar', 'velar', 'voiced'];
 
-var psymbol = {img:"p", place:"bilabial", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-var ksymbol = {img:"k", place:"velar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-var csymbol = {img:"c", place:"palatal", manner:"plosive", voicing:"voiceless", nasality:"oral"};
-var tsymbol = {img:"t", place:"alveolar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var psymbol = {img:"p", status:"unchecked", place:"bilabial", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var ksymbol = {img:"k", status:"unchecked", place:"velar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var csymbol = {img:"c", status:"unchecked", place:"palatal", manner:"plosive", voicing:"voiceless", nasality:"oral"};
+var tsymbol = {img:"t", status:"unchecked", place:"alveolar", manner:"plosive", voicing:"voiceless", nasality:"oral"};
 
 //need to be changed: no longer these names for id
 var plosiveBox = ['plosive'];
@@ -41,7 +41,7 @@ function generateDescriptors() {
    		var descriptor = document.createElement('div');
    		var name = descriptorNames[i];
    		descriptor.id = name;
-  		descriptor.className = 'IPAsymbol';
+  		descriptor.className = 'IPAsymbol'; //should be a 'descriptor' class
    		descriptor.innerHTML = name;
    		descriptor.draggable = "true";
 		descriptor.addEventListener("dragstart", function () {
@@ -177,26 +177,17 @@ function drop(event) {
 		for (x in symbolObject) { //loop through the contents of the object for the symbol
 			if (dropBox1Descriptors.includes(symbolObject[x])) { //if the dropBox descriptors array contains the value
 				count++; //increment the count variable
-			} //does there need to be an 'else' condition?
-		}
+			};
+		};
 		if (count > 0) {
-			//set the status on the symbol to 'checked'
-			//make the symbol background green
+			window[symbol].status = 'checked'; //set the status on the symbol to 'checked'
+			document.getElementById(symbol).style.backgroundColor = "00ff00"; //make the symbol background green
 		}
 		else {
-			//set the status on the symbol to 'unchecked'
-			//make the symbol background white
+			window[symbol].status = 'unchecked'; //set the status on the symbol to 'unchecked'
+			document.getElementById(symbol).style.backgroundColor = "000000"; //make the symbol background white
 		}
-		//before ending the 'for' loop, need to change the symbol based on the results
-		//if count > 0, we want to 1) set the 'check' status on the symbol to 'checked', 2) make the symbol green
 	}
-	//the following needs to be changed; need to ultimately have the function 'check' the symbol, not the box
-	if (count > 0) {	// if the 'count' variable is greater than 0 (has been incremented, i.e. a match was found)
-		event.target.style.background = '#006400';	// set the box background to green
-	}
-	else {
-		event.target.style.background = '#8B0000';	// otherwise set the box background to red
-	};
 }
 
 
