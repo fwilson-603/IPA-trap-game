@@ -37,7 +37,9 @@ function generateDescriptors() {
   		descriptor.className = 'IPAsymbol';
    		descriptor.innerHTML = name;
    		descriptor.draggable = "true";
-    		// will need to add an event listener to get it to do anything when dragged
+		descriptor.addEventListener("dragstart", function () {
+			drag(event);
+		});
    		document.getElementById("descriptorTest").appendChild(descriptor);
   }
 }
