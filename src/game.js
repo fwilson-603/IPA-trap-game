@@ -169,6 +169,7 @@ function drop(event) {
 	event.preventDefault(); //prevent default drag-and-drop cancel
 	var data = event.dataTransfer.getData("text"); //descriptor object Id
 	dropBox1Descriptors.push(data); //add the dropped element to the array of descriptors for the dropBox
+	event.target.appendChild(document.getElementById(data)); //append the dragged object to the div box
 	for (i=0; i<dropBox1Symbols.length; i++) { //loop through the full length of dropBox1symbols
 		//goal: remove the contents of this loop and make it a separate function which can be called independently
 		var count = 0; //set the variable 'count' to 0
