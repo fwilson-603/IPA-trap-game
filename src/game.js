@@ -24,6 +24,13 @@ var dropBox5Symbols;
 var dropBox6Symbols;
 var boxes = ['dropBox1', 'dropBox2', 'dropBox3', 'dropBox4', 'dropBox5', 'dropBox6'];
 
+var dropBox1Descriptors = [];
+var dropBox2Descriptors = [];
+var dropBox3Descriptors = [];
+var dropBox4Descriptors = [];
+var dropBox5Descriptors = [];
+var dropBox6Descriptors = [];
+
 function pageLoad() {
   generateDescriptors();
   randomizeSymbols();
@@ -133,7 +140,8 @@ function drag(event) {
 // Function below needs global variables of the types:
 // var velarBox = ['velar']
 // var ksymbol = {place:'velar', manner:'plosive', voicing:'voiceless'}
-function drop(event) {
+//this is now test, but it's the most recent working model
+function TESTdrop(event) {
 	event.preventDefault(); //prevent default drag-and-drop cancel
 	var data = event.dataTransfer.getData("text"); //dragged object ID
 	var boxId = event.target.id; //box object ID
@@ -154,6 +162,43 @@ function drop(event) {
 		event.target.style.background = '#8B0000';	// otherwise set the box background to red
 	};
 }
+
+//new drop(event) function, this one checking descriptors, not symbols
+//currently set to only work for dropBox1
+function drop(event) {
+	event.preventDefault(); //prevent default drag-and-drop cancel
+	var data = event.dataTransfer.getData("text"); //descriptor object Id
+	dropBox1Descriptors.push(data); //add the dropped element to the array of descriptors for the dropBox
+	for (i=0; i<dropBox1Symbols.length; i++) { //loop through the full length of dropBox1symbols
+		//goal: remove the contents of this loop and make it a separate function which can be called independently
+		var count = 0; //set the variable 'count' to 0
+		var symbol = dropBox1Symbols[i]; //set a variable to the current symbol id
+		var symbolObject = window[symbol]; //set a variable to the contents of the global variable named for the symbol id
+		for (x in symbolObject) { //loop through the contents of the object for the symbol
+			if (dropBox1Descriptors.includes(symbolObject[x])) { //if the dropBox descriptors array contains the value
+				count++; //increment the count variable
+			} //does there need to be an 'else' condition?
+		}
+		if (count > 0) {
+			//set the status on the symbol to 'checked'
+			//make the symbol background green
+		}
+		else {
+			//set the status on the symbol to 'unchecked'
+			//make the symbol background white
+		}
+		//before ending the 'for' loop, need to change the symbol based on the results
+		//if count > 0, we want to 1) set the 'check' status on the symbol to 'checked', 2) make the symbol green
+	}
+	//the following needs to be changed; need to ultimately have the function 'check' the symbol, not the box
+	if (count > 0) {	// if the 'count' variable is greater than 0 (has been incremented, i.e. a match was found)
+		event.target.style.background = '#006400';	// set the box background to green
+	}
+	else {
+		event.target.style.background = '#8B0000';	// otherwise set the box background to red
+	};
+}
+
 
 function drop0(event) {
   event.preventDefault();
