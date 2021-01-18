@@ -180,6 +180,9 @@ function drop(event) {
 				count++; //increment the count variable
 			};
 		};
+		document.getElementById("test1").innerHTML += count;
+		document.getElementById("test2").innerHTML += symbol;
+		document.getElementById("test3").innerHTML += symbolObject;
 		if (count > 0) {
 			window[symbol].status = 'checked'; //set the status on the symbol to 'checked'
 			document.getElementById(symbol).style.backgroundColor = "00ff00"; //make the symbol background green
@@ -189,9 +192,6 @@ function drop(event) {
 			document.getElementById(symbol).style.backgroundColor = "000000"; //make the symbol background white
 		}
 	}
-	document.getElementById("test1").innerHTML = data;
-	document.getElementById("test2").innerHTML = dropBox1Descriptors;
-	document.getElementById("test3").innerHTML = dropBox1Symbols;
 }
 
 
