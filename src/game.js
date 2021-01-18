@@ -181,8 +181,8 @@ function drop(event) {
 			};
 		};
 		document.getElementById("test1").innerHTML += window[symbol];
-		document.getElementById("test2").innerHTML += symbol;
-		document.getElementById("test3").innerHTML += symbolObject;
+		document.getElementById("test2").innerHTML += window[tsymbol];
+		document.getElementById("test3").innerHTML += window['tsymbol'];
 		if (count > 0) {
 			window[symbol].status = 'checked'; //set the status on the symbol to 'checked'
 			document.getElementById(symbol).style.backgroundColor = "00ff00"; //make the symbol background green
