@@ -189,6 +189,9 @@ function drop(event) {
 			document.getElementById(symbol).style.backgroundColor = "000000"; //make the symbol background white
 		}
 	}
+	document.getElementById("test1").innerHTML = data;
+	document.getElementById("test2").innerHTML = dropBox1Descriptors;
+	document.getElementById("test3").innerHTML = dropBox1Symbols;
 }
 
 
