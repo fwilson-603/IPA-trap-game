@@ -180,7 +180,7 @@ function drop(event) {
 				count++; //increment the count variable
 			};
 		};
-		document.getElementById("test1").innerHTML += window[symbol];
+		document.getElementById("test1").innerHTML += tsymbol;
 		document.getElementById("test2").innerHTML += window[tsymbol];
 		document.getElementById("test3").innerHTML += window['tsymbol'];
 		if (count > 0) {
