@@ -168,11 +168,11 @@ function TESTdrop(event) {
 function drop(event) {
 	event.preventDefault(); //prevent default drag-and-drop cancel
 	var data = event.dataTransfer.getData("text"); //descriptor object Id
+	var count = 0; //set the variable 'count' to 0
 	dropBox1Descriptors.push(data); //add the dropped element to the array of descriptors for the dropBox
 	event.target.appendChild(document.getElementById(data)); //append the dragged object to the div box
 	for (i=0; i<dropBox1Symbols.length; i++) { //loop through the full length of dropBox1symbols
 		//goal: remove the contents of this loop and make it a separate function which can be called independently
-		var count = 0; //set the variable 'count' to 0
 		var symbol = dropBox1Symbols[i]; //set a variable to the current symbol id
 		var symbolObject = window[symbol]; //set a variable to the contents of the global variable named for the symbol id
 		for (x in symbolObject) { //loop through the contents of the object for the symbol
