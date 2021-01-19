@@ -181,6 +181,7 @@ function drop(event) {
 		var symbolObject = window[symbol]; //set a variable to the contents of the global variable named for the symbol id
 		for (x in symbolObject) {
 			document.getElementById("test2").innerHTML += x;
+			document.getElementById("test3").innerHTML += symbolObject[x];
 		}
 		//for (x in symbolObject) { //loop through the contents of the object for the symbol
 		//	if (dropBox1Descriptors.includes(symbolObject[x])) { //if the dropBox descriptors array contains the value
