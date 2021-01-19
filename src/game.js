@@ -38,9 +38,6 @@ var test1 = tsymbol;
 function pageLoad() {
   generateDescriptors();
   randomizeSymbols();
-  document.getElementById("test1").innerHTML = tsymbol;
-  document.getElementById("test2").innerHTML = window[tsymbol];
-  document.getElementById("test3").innerHTML = window[test1];
 }
 
 function generateDescriptors() {
@@ -187,9 +184,9 @@ function drop(event) {
 				count++; //increment the count variable
 			};
 		};
-		document.getElementById("test1").innerHTML += tsymbol;
-		document.getElementById("test2").innerHTML += window[tsymbol];
-		document.getElementById("test3").innerHTML += window['tsymbol'];
+		document.getElementById("test1").innerHTML += tsymbol["img"];
+		document.getElementById("test2").innerHTML += window[tsymbol]["img"];
+		document.getElementById("test3").innerHTML += window['tsymbol']["img"];
 		if (count > 0) {
 			window[symbol].status = 'checked'; //set the status on the symbol to 'checked'
 			document.getElementById(symbol).style.backgroundColor = "00ff00"; //make the symbol background green
