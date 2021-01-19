@@ -33,13 +33,14 @@ var dropBox6Descriptors = [];
 
 var test1 = tsymbol;
 
-document.getElementById("test1").innerHTML = tsymbol;
-document.getElementById("test2").innerHTML = window[tsymbol];
-document.getElementById("test3").innerHTML = window[test1];
+
 
 function pageLoad() {
   generateDescriptors();
   randomizeSymbols();
+  document.getElementById("test1").innerHTML = tsymbol;
+  document.getElementById("test2").innerHTML = window[tsymbol];
+  document.getElementById("test3").innerHTML = window[test1];
 }
 
 function generateDescriptors() {
