@@ -184,9 +184,9 @@ function drop(event) {
 				count++; //increment the count variable
 			};
 		};
-		document.getElementById("test1").innerHTML += tsymbol["img"];
-		document.getElementById("test2").innerHTML += window[tsymbol]["img"];
-		document.getElementById("test3").innerHTML += window['tsymbol']["img"];
+		document.getElementById("test1").innerHTML += symbol["img"];
+		document.getElementById("test2").innerHTML += symbolObject["img"];
+		document.getElementById("test3").innerHTML += window[symbol]["img"];
 		if (count > 0) {
 			window[symbol].status = 'checked'; //set the status on the symbol to 'checked'
 			document.getElementById(symbol).style.backgroundColor = "00ff00"; //make the symbol background green
