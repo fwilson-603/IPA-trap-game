@@ -179,14 +179,17 @@ function drop(event) {
 		//goal: remove the contents of this loop and make it a separate function which can be called independently
 		var symbol = dropBox1Symbols[i]; //set a variable to the current symbol id
 		var symbolObject = window[symbol]; //set a variable to the contents of the global variable named for the symbol id
-		for (x in symbolObject) { //loop through the contents of the object for the symbol
-			if (dropBox1Descriptors.includes(symbolObject[x])) { //if the dropBox descriptors array contains the value
-				count++; //increment the count variable
-			};
-		};
-		document.getElementById("test1").innerHTML += symbol["img"];
-		document.getElementById("test2").innerHTML += symbolObject["img"];
-		document.getElementById("test3").innerHTML += window[symbol]["img"];
+		for (x in symbolObject) {
+			document.getElementById("test2").innerHTML += x;
+		}
+		//for (x in symbolObject) { //loop through the contents of the object for the symbol
+		//	if (dropBox1Descriptors.includes(symbolObject[x])) { //if the dropBox descriptors array contains the value
+		//		count++; //increment the count variable
+		//	};
+		//};
+		document.getElementById("test1").innerHTML += count;
+		//document.getElementById("test2").innerHTML += dropBox1Descriptors;
+		//document.getElementById("test3").innerHTML += dropBox1Descriptors.includes();
 		if (count > 0) {
 			window[symbol].status = 'checked'; //set the status on the symbol to 'checked'
 			document.getElementById(symbol).style.backgroundColor = "00ff00"; //make the symbol background green
